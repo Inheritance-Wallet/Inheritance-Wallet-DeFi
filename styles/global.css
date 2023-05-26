@@ -345,7 +345,7 @@ button {
     width: 80%;
     border-radius: 5px;
     margin-bottom: 5px;
-    padding: 50px;
+    padding: 45px;
 }
 
 button {
@@ -564,3 +564,36 @@ div.social {
     }
 
 }
+
+.subscribe{
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+
+input.Email{
+height: 10px;
+border-radius: 20px;
+}
+
+.svgImag3{
+
+        border-radius: 100%;
+        color: white;
+        font-size: 46px;
+        text-align: center;
+        margin-left: 60px;
+        margin-right: 60px;
+        align-items: center;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 300px;
+        height: 350px;
+        width: 550px;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.999;
+}
+
