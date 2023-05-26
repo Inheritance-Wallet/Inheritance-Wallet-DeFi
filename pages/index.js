@@ -86,7 +86,7 @@ const Chainlink = () => {
           <a href="contact.html" className="contact">
             Contact
           </a>
-          <a className="active"> Contact Wallet </a>
+         <a className="active" onClick={walletConnect}> Contact Wallet </a>
           <div>
             {!wallet.address ? <div></div> : <div>{wallet.address}</div>}
           </div>
