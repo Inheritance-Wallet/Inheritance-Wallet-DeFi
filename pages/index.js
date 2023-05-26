@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Footer from "./api/Footer";
 import useWeb3 from "@/hooks/useWeb3";
@@ -66,7 +66,7 @@ const Chainlink = () => {
               placeholder="Your email here"
               className="Email"
             />
-            <button>Subscribe</button>
+            <button className="SubscribeButton" id="subscribeButton" type="submit">Subscribe</button>
           </div>
         </div>
         <p>Copyright &copy; 2023 Inheritance Wallet</p>
@@ -111,8 +111,8 @@ const Chainlink = () => {
         <article>
           <h1 className="slogan">
             Guarantee Your Inheritance Now.
-            <span className="sloganThink">Think</span>
-            <span className="sloganDie">Die</span> Later.
+            <span className="sloganThink"> Think</span>
+            <span className="sloganDie"> Die</span> Later.
           </h1>
           <p className="slogan2">
           <img src="images/blockchain1.png" alt="" className="svgImag3" />
@@ -122,16 +122,19 @@ const Chainlink = () => {
           </p>
           <p className="slogan3">
             Choose the people who will take your crypto assets, don't let death
-            <span className="sloganThink">fool you.</span>
-            <span className="sloganDie">take over all you had.</span>
+            <span className="sloganThink"> fool you.</span>
+            <span className="sloganDie"> take over all you had.</span>
           </p>
         </article>
       </div>
       <br />
       <br />
       <img src="images/blockchain1.png" alt="blockchain bg" className="svgImag2" />
+      <hr></hr>
+      <CustomFooter />
       <hr />
     </div>
+    
   );
 };
 export default Chainlink;
