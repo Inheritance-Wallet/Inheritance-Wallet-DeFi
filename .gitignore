@@ -1,0 +1,80 @@
+# Dependency directories
+node_modules/
+
+# Build files
+.next/
+out/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Next.js development files
+/.next/
+/.next/*
+!/.next/static/
+/.next/server/
+/.next/server/*
+!/.next/server/pages/
+!/.next/serverless/
+!/.next/serverless/*
+!/.next/serverless/pages/
+
+# Cache and logs
+.cache/
+.next.config.js
+.npm/
+.npmrc
+yarn.lock
+package-lock.json
+yarn-error.log
+npm-debug.log*
+
+# Visual Studio Code settings
+.vscode/
+*.code-workspace
+
+# macOS files
+.DS_Store
+
+# IDE and editor files
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.iml
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+test/unit/coverage/
+
+# Testing
+/coverage/
+/coverage*/
+*.pid
+*.log
+reports/
+test-report.xml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.fuse_hidden*
+
+# End of the file
