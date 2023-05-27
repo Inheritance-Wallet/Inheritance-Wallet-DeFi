@@ -86,7 +86,7 @@ const Chainlink = () => {
           <a href="contact.html" className="contact">
             Contact
           </a>
-         <a className="active" onClick={walletConnect}> Contact Wallet </a>
+          <a className="active" onClick={walletConnect}> Contact Wallet </a>
           <div>
             {!wallet.address ? <div></div> : <div>{wallet.address}</div>}
           </div>
@@ -99,11 +99,13 @@ const Chainlink = () => {
           <h1 className="title let">Let Your</h1>
           <h1 className="title wallet">Assets</h1>
           <h1 className="title die">Die</h1>
-          <div>
-            <button className="withdraw-button"> Withdraw </button>
-            <button className="deposit-button"> Deposit </button>
-            <button className="main-button"> Choose Guardian </button>
-          </div>
+          {wallet.address &&
+            <div>
+              <button className="withdraw-button"> Withdraw </button>
+              <button className="deposit-button"> Deposit </button>
+              <button className="main-button"> Choose Guardian </button>
+            </div>
+          }
         </div>
         <img src="images/blockchain1.png" alt="" className="svgImag" />
       </div>
@@ -115,7 +117,7 @@ const Chainlink = () => {
             <span className="sloganDie"> Die</span> Later.
           </h1>
           <p className="slogan2">
-          <img src="images/blockchain1.png" alt="" className="svgImag3" />
+            <img src="images/blockchain1.png" alt="" className="svgImag3" />
 
             Our aim is protecting your crypto assets even when you die. We all
             gonna make it and when we make it, we not gonna lose it.
@@ -134,7 +136,7 @@ const Chainlink = () => {
       <CustomFooter />
       <hr />
     </div>
-    
+
   );
 };
 export default Chainlink;
