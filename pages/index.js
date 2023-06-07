@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Footer from "./api/Footer";
 import useWeb3 from "@/hooks/useWeb3";
+import AddInheritors from "./AddInheritors";
 
 const Chainlink = () => {
   const { wallet } = useWeb3();
+  const [showAddInheritors, setShowAddInheritors] = useState(false);
 
   const walletConnect = () => {
     wallet.connect();
+  };
+
+  const handleOpenAddInheritors = () => {
+    window.open("./AddInheritors", "_blank");
   };
 
   const CustomHead = () => (
@@ -66,7 +72,13 @@ const Chainlink = () => {
               placeholder="Your email here"
               className="Email"
             />
-            <button className="SubscribeButton" id="subscribeButton" type="submit">Subscribe</button>
+            <button
+              className="SubscribeButton"
+              id="subscribeButton"
+              type="submit"
+            >
+              Subscribe
+            </button>
           </div>
         </div>
         <p>Copyright &copy; 2023 Inheritance Wallet</p>
@@ -74,6 +86,7 @@ const Chainlink = () => {
     </Footer>
   );
 
+  
   return (
     <div>
       <CustomHead />
@@ -86,10 +99,10 @@ const Chainlink = () => {
           <a href="contact.html" className="contact">
             Contact
           </a>
-          <a className="active" onClick={walletConnect}> Contact Wallet </a>
-          <div>
-            {!wallet.address ? <div></div> : <div>{wallet.address}</div>}
-          </div>
+          <a className="active" onClick={walletConnect}>
+            Contact Wallet
+          </a>
+          <div>{wallet.address ? <div>{wallet.address}</div> : <div></div>}</div>
         </div>
       </div>
       <hr />
@@ -99,13 +112,18 @@ const Chainlink = () => {
           <h1 className="title let">Let Your</h1>
           <h1 className="title wallet">Assets</h1>
           <h1 className="title die">Die</h1>
-          {wallet.address &&
+          {wallet.address && (
             <div>
-              <button className="withdraw-button"> Withdraw </button>
-              <button className="deposit-button"> Deposit </button>
-              <button className="main-button"> Choose Guardian </button>
+              <button className="withdraw-button">Withdraw</button>
+              <button className="deposit-button">Deposit</button>
+              <button
+                className="main-button"
+                onClick={handleOpenAddInheritors}
+              >
+                Choose Guardian
+              </button>
             </div>
-          }
+          )}
         </div>
         <img src="images/blockchain1.png" alt="" className="svgImag" />
       </div>
@@ -118,7 +136,6 @@ const Chainlink = () => {
           </h1>
           <p className="slogan2">
             <img src="images/blockchain1.png" alt="" className="svgImag3" />
-
             Our aim is protecting your crypto assets even when you die. We all
             gonna make it and when we make it, we not gonna lose it.
           </p>
@@ -136,7 +153,7 @@ const Chainlink = () => {
       <CustomFooter />
       <hr />
     </div>
-
   );
 };
+
 export default Chainlink;
