@@ -213,7 +213,7 @@
     left: 500px;
     height: 350px;
     width: 550px;
-    background-image: url('');
+    /* background-image: url(''); */
     background-size: cover;
     background-position: center;
     opacity: 0.9;
@@ -597,3 +597,66 @@ border-radius: 20px;
         opacity: 0.999;
 }
 
+.addTitle{
+    text-align: center;
+    font-size: 70px;
+}
+
+.addTitle:hover{
+    color: red;
+}
+
+.addInheritors {
+    align-items: flex-end;
+    width: 100px;
+    margin-left: 500px;
+    margin-right: 20px;
+    float: left;
+  }
+  
+  .submitButton {
+    text-align: center;
+    width: 400px;
+    align-items: center;
+    float: left;
+  }
+
+  .submitButton:hover{
+color: #25262e;
+background-color:#cfd2d6;  }
+
+  .addInheritors:hover{
+color: #25262e;
+background-color:#cfd2d6;
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .selectButton {
+    margin-left: 80px;
+  }
+  
+  .percent {
+    margin-left: 70px;
+  }
+  
+  .enterAddress {
+    margin-left: 200px;
+    margin-top: 12px;
+  }
+
+  .selectText{
+    text-align: center;
+    font-size: 50px;
+    background-color:#545454;
+    border-radius: 70%;
+  }
+
+  .Test{
+    border: 1px solid white;
+    border-radius: 100px;
+  }

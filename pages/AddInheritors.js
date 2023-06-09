@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "./api/Footer";
 
 const AddInheritors = () => {
   const [inheritors, setInheritors] = useState([{ address: "", coin: "", percentage: 0 }]);
@@ -100,7 +99,6 @@ const AddInheritors = () => {
           />
           <span style={{ marginLeft: "5px" }}>{inheritor.percentage}%</span>
         </div>
-
         <div style={{ display: "flex", alignItems: "center" }}>
           <select
             value={inheritor.coin}
@@ -161,22 +159,6 @@ const AddInheritors = () => {
         {warningMessage && <p style={{ color: "red", textAlign: "center", marginTop:"80px" }}>{warningMessage}</p>}
       </form>
       </div>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <hr></hr>
-      <Footer />
     </div>
   );
 }
