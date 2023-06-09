@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Ubuntu:wght@700&display=swap');
+
+* {
+    background: black;
+    color: white;
+}
+
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: #000000;
+    padding: 10px 5px;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header .home:hover {
+    background-color: rgb(70, 70, 70);
+
+}
+
+.header .contact:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.title-wrapper {
+    margin-right: 20px;
+    margin-left: 100px;
+}
+
+.title {
+    font-size: 70px;
+    margin-right: -100px;
+    color: black;
+    -webkit-text-stroke: 2px white;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.svgImage {
+    position: fixed;
+    z-index: 0;
+    height: 100px;
+    width: 200px;
+}
+
+
+
+.slogan {
+    text-align: center;
+    font-size: 100px;
+}
+
+.slogan .sloganDie {
+    display: none;
+}
+
+.slogan:hover .sloganDie {
+    display: inline;
+    color: red;
+}
+
+.slogan:hover .sloganThink {
+    display: none;
+}
+
+
+.picture1 {
+    width: 300px;
+    height: 200px;
+    z-index: 1;
+    margin-right: 300px;
+}
+
+.dont:hover {
+    color: white;
+}
+
+.let:hover {
+    color: white;
+}
+
+.wallet:hover {
+    color: white;
+}
+
+.die:hover {
+    color: red;
+}
+
+
+.svgImage {
+    position: relative;
+    z-index: -999;
+    height: 100%;
+    width: 100%;
+    margin-top: -220px;
+}
+
+.svgImag2 {
+    width: 1200px;
+    height: 400px;
+    z-index: -999;
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+/* Style the active/current link*/
+.header a.active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.header a.active:hover {
+    background-color: rgb(190, 190, 190);
+    color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+/* Buttons */
+
+.buttons {
+    margin-top: 20px;
+}
+
+.deposit-button,
+.withdraw-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.deposit-button:hover,
+.withdraw-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.slogan2 {
+    border-radius: 100%;
+    color: white;
+    font-size: 46px;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.slogan2::before {
+    align-items: center;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 500px;
+    height: 350px;
+    width: 550px;
+    /* background-image: url(''); */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.slogan3 {
+    border-radius: 600px;
+    color: white;
+    font-size: 46px;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.sloganDie {
+    display: none;
+}
+
+.slogan3:hover .sloganDie {
+    display: inline;
+    color: red;
+}
+
+.slogan3:hover .sloganThink {
+    display: none;
+}
+
+
+
+.footer {
+    border-radius: 100%;
+    color: white;
+    font-size: 46px;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer::before {
+    align-items: center;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 500px;
+    height: 250px;
+    width: 350px;
+    /* background-image: url('../public/images/blockchain1.png'); */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #121315;
+    color: #a7a7a7;
+    font-size: 16px;
+}
+
+footer * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.row {
+    padding: 1em 1em;
+}
+
+.row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: stretch;
+}
+
+.column {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 15em;
+}
+
+h3 {
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 1.4em;
+    white-space: nowrap;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+li:not(:first-child) {
+    margin-top: 0.8em;
+}
+
+ul li a {
+    color: #a7a7a7;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #ff2f00;
+}
+
+.about p {
+    z-index: 3;
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+}
+
+input,
+button {
+    font-size: 1em;
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 45px;
+}
+
+button {
+    background-color: #898989;
+    color: #ffffff;
+}
+
+div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+
+.social i {
+    color: #bac6d9;
+}
+
+.copyright {
+    padding: 0.3em 1em;
+    background-color: #25262e;
+}
+
+.footer-menu {
+    float: left;
+    margin-top: 10px;
+}
+
+.footer-menu a {
+    color: #cfd2d6;
+    padding: 6px;
+
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #ff2f00;
+}
+
+.copyright p {
+    font-size: 0.9em;
+    text-align: right;
+}
+
+@media screen and (max-width: 850px) {
+    .row.primary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+    .slogan3 {
+        display: none;
+    }
+
+    .svgImag {
+        display: none;
+    }
+
+    .svgImag2 {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+    .slogan3 {
+        display: none;
+    }
+
+    .svgImag {
+        display: none;
+    }
+
+    .svgImag2 {
+        display: none;
+    }
+
+    .slogan2 {
+        display: none;
+    }
+
+    body {
+        margin-right: 10px;
+    }
+
+    .h1 {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .slogan3 {
+        display: none;
+    }
+
+    .svgImag {
+        display: none;
+    }
+
+    .svgImag2 {
+        display: none;
+    }
+
+    .slogan2 {
+        display: none;
+    }
+
+    body {
+        margin-right: 10px;
+    }
+
+    .h1 {
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+
+.withdraw-button {
+    border: 2px solid white;
+    background: #000000;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.deposit-button {
+    border: 2px solid white;
+    background: #000000;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.main-button{
+    border: 2px solid white;
+    background: #000000;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 140px;
+    font-weight: 600;
+}
+
+.deposit-button:hover {
+    background-color: rgb(133, 133, 133);
+}
+
+.withdraw-button:hover {
+    background-color: rgb(133, 133, 133);
+}
+
+.main-button:hover {
+    background-color: rgb(133, 133, 133);
+}
+.svgImag3{
+    width: 800px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1280px) {
+    .main-button{
+        border: 2px solid white;
+        background: #000000;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        border-radius: 40px;
+        text-align: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .main-button{
+        border: 2px solid white;
+        background: #000000;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        border-radius: 40px;
+        text-align: center;
+        align-items: center;
+        margin-left: 170px;
+    }
+
+}
+
+@media screen and (max-width: 412px) {
+    .main-button{
+        border: 2px solid white;
+        background: #000000;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        border-radius: 40px;
+        text-align: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+}
+
+.subscribe{
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+
+input.Email{
+height: 10px;
+border-radius: 20px;
+}
+
+.svgImag3{
+
+        border-radius: 100%;
+        color: white;
+        font-size: 46px;
+        text-align: center;
+        margin-left: 60px;
+        margin-right: 60px;
+        align-items: center;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 300px;
+        height: 350px;
+        width: 550px;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.999;
+}
+
+.addTitle{
+    text-align: center;
+    font-size: 70px;
+}
+
+.addTitle:hover{
+    color: red;
+}
+
+.addInheritors {
+    align-items: flex-end;
+    width: 100px;
+    margin-left: 500px;
+    margin-right: 20px;
+    float: left;
+  }
+  
+  .submitButton {
+    text-align: center;
+    width: 400px;
+    align-items: center;
+    float: left;
+  }
+
+  .submitButton:hover{
+color: #25262e;
+background-color:#cfd2d6;  }
+
+  .addInheritors:hover{
+color: #25262e;
+background-color:#cfd2d6;
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .selectButton {
+    margin-left: 80px;
+  }
+  
+  .percent {
+    margin-left: 70px;
+  }
+  
+  .enterAddress {
+    margin-left: 200px;
+    margin-top: 12px;
+  }
+
+  .selectText{
+    text-align: center;
+    font-size: 50px;
+    background-color:#545454;
+    border-radius: 70%;
+  }
+
+  .Test{
+    border: 1px solid white;
+    border-radius: 100px;
+  }
