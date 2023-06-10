@@ -93,10 +93,10 @@ const Chainlink = () => {
       <div className="header">
         <a className="logo">Inheritance Wallet</a>
         <div className="header-right">
-          <a href="index.html" className="home">
+          <a href="/" className="home">
             Home
           </a>
-          <a href="contact.html" className="contact">
+          <a href="/Footer" className="contact">
             Contact
           </a>
           <a className="active" onClick={walletConnect}>
