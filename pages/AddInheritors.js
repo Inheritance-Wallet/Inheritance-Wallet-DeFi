@@ -4,6 +4,7 @@ import Footer from "./api/Footer";
 const AddInheritors = () => {
   const [inheritors, setInheritors] = useState([{ address: "", coin: "", percentage: 0 }]);
   const [warningMessage, setWarningMessage] = useState("");
+  const [contactClicked, setContactClicked] = useState(false);
 
   const addInheritor = () => {
     const hasEmptyFields = inheritors.some(
@@ -13,7 +14,9 @@ const AddInheritors = () => {
       setWarningMessage("Please fill in all the required fields.");
     } else {
       const isDuplicateAddress = inheritors.some(
-        (inheritor, index) => index !== inheritors.length - 1 && inheritor.address === inheritors[inheritors.length - 1].address
+        (inheritor, index) =>
+          index !== inheritors.length - 1 &&
+          inheritor.address === inheritors[inheritors.length - 1].address
       );
       if (isDuplicateAddress) {
         setWarningMessage("Duplicate wallet address. Please enter a unique address.");
@@ -24,8 +27,11 @@ const AddInheritors = () => {
         if (!isValidAddresses) {
           setWarningMessage("Please enter valid wallet addresses.");
         } else {
-          const totalPercentage = inheritors.reduce((total, inheritor) => total + inheritor.percentage, 0);
-          if (totalPercentage + 0 <= 100) { // Change 0 to the default percentage value for new inheritors
+          const totalPercentage = inheritors.reduce(
+            (total, inheritor) => total + inheritor.percentage,
+            0
+          );
+          if (totalPercentage + 0 <= 100) {
             setInheritors([...inheritors, { address: "", coin: "", percentage: 0 }]);
             setWarningMessage("");
           } else {
@@ -41,7 +47,6 @@ const AddInheritors = () => {
     updatedInheritors[index].address = value;
     setInheritors(updatedInheritors);
 
-    // Check for duplicate address
     const isDuplicateAddress = updatedInheritors.some(
       (inheritor, i) => i !== index && inheritor.address === value
     );
@@ -60,14 +65,17 @@ const AddInheritors = () => {
 
   const handlePercentageChange = (index, value) => {
     const updatedInheritors = [...inheritors];
-    updatedInheritors[index].percentage = parseInt(value); // Convert to integer
+    updatedInheritors[index].percentage = parseInt(value);
     setInheritors(updatedInheritors);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const totalPercentage = inheritors.reduce((total, inheritor) => total + inheritor.percentage, 0);
+    const totalPercentage = inheritors.reduce(
+      (total, inheritor) => total + inheritor.percentage,
+      0
+    );
 
     if (totalPercentage !== 100) {
       setWarningMessage("The total percentage must be 100.");
@@ -79,17 +87,29 @@ const AddInheritors = () => {
 
   const renderInheritors = () => {
     return inheritors.map((inheritor, index) => (
-      <div className="Test" key={index} style={{ display: "flex", marginBottom: "10px" }}>
+      <div
+        className="Test"
+        key={index}
+        style={{ display: "flex", marginBottom: "10px" }}
+      >
         <div className="enterAddress" style={{ marginRight: "10px" }}>
           <input
             type="text"
             value={inheritor.address}
             onChange={(e) => handleAddressChange(index, e.target.value)}
             placeholder="Enter address"
-            style={{ width: "380px", height: "0px", padding:"40px", borderRadius:"30px" }}
+            style={{
+              width: "380px",
+              height: "0px",
+              padding: "40px",
+              borderRadius: "30px",
+            }}
           />
         </div>
-        <div className="percent" style={{ marginRight: "10px", display: "flex", alignItems: "center" }}>
+        <div
+          className="percent"
+          style={{ marginRight: "10px", display: "flex", alignItems: "center" }}
+        >
           <input
             type="range"
             min="0"
@@ -100,7 +120,6 @@ const AddInheritors = () => {
           />
           <span style={{ marginLeft: "5px" }}>{inheritor.percentage}%</span>
         </div>
-
         <div style={{ display: "flex", alignItems: "center" }}>
           <select
             value={inheritor.coin}
@@ -115,70 +134,76 @@ const AddInheritors = () => {
       </div>
     ));
   };
-  
+
+  const handleContactClick = () => {
+    setContactClicked(true);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
+
   return (
     <div>
-      <h1 className="addTitle">Add Inheritors</h1>
-      <hr />
-      <br>
-      </br>
-      <br>
-      </br>
-      <p className="selectText">Select Your Guardians Now</p>
-
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-
-      <div className="clearfix">
-      <form onSubmit={handleSubmit}>
-        {renderInheritors()}
-        <br>
-        </br>
-        <br>
-        </br>
-        <br>
-        </br>
-        <button
-          type="button"
-          onClick={addInheritor}
-          className="addInheritors"
-          style={{ padding: "10px", minWidth: "30px", fontSize: "14px" }}
-          disabled={inheritors.reduce((total, inheritor) => total + inheritor.percentage, 0) === 100}
-        >
-          +
-        </button>
-        <button
-          type="submit"
-          className="submitButton"
-          style={{  padding: "10px", minWidth: "30px", fontSize: "14px" }}
-        >
-          Submit
-        </button>
-        {warningMessage && <p style={{ color: "red", textAlign: "center", marginTop:"80px" }}>{warningMessage}</p>}
-      </form>
+      <div className="header">
+       
+          <a href="/" className="logo">Inheritance Wallet</a>
+    
+        <div className="header-right">
+          <a href="/" className="home">
+            Home
+          </a>
+          <a className="contact" onClick={handleContactClick}>
+            Contact
+          </a>
+        </div>
       </div>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <hr></hr>
-      <Footer />
+      <hr />
+      <h1 className="addTitle">Add Inheritors</h1>
+      <br></br>
+      <br></br>
+      <p className="selectText">Select Your Guardians Now</p>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="clearfix">
+        <form onSubmit={handleSubmit}>
+          {renderInheritors()}
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <button
+            type="button"
+            onClick={addInheritor}
+            className="addInheritors"
+            style={{ padding: "10px", minWidth: "30px", fontSize: "14px" }}
+            disabled={
+              inheritors.reduce((total, inheritor) => total + inheritor.percentage, 0) === 100
+            }
+          >
+            +
+          </button>
+          <button
+            type="submit"
+            className="submitButton"
+            style={{ padding: "10px", minWidth: "30px", fontSize: "14px" }}
+          >
+            Submit
+          </button>
+          {warningMessage && (
+            <p style={{ color: "red", textAlign: "center", marginTop: "80px" }}>
+              {warningMessage}
+            </p>
+          )}
+        </form>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr />
+      {contactClicked && <Footer />}
     </div>
   );
-}
+};
 
 export default AddInheritors;
