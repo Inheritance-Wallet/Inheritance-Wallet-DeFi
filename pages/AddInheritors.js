@@ -4,7 +4,7 @@ import Footer from "./api/Footer";
 const AddInheritors = () => {
   const [inheritors, setInheritors] = useState([{ address: "", coin: "", percentage: 0 }]);
   const [warningMessage, setWarningMessage] = useState("");
-  const [contactClicked, setContactClicked] = useState(false);
+  const [contactClicked, setContactClicked] = useState(true);
 
   const addInheritor = () => {
     const hasEmptyFields = inheritors.some(

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Footer from "./api/Footer";
 import useWeb3 from "@/hooks/useWeb3";
-import AddInheritors from "./AddInheritors";
+// import AddInheritors from "./AddInheritors";
 
 const Chainlink = () => {
   const { wallet } = useWeb3();
-  const [showAddInheritors, setShowAddInheritors] = useState(false);
+  //const [showAddInheritors, setShowAddInheritors] = useState(false);
+  const [contactClicked, setContactClicked] = useState(true);
 
   const walletConnect = () => {
     wallet.connect();
@@ -26,8 +27,8 @@ const Chainlink = () => {
   );
 
   const CustomFooter = () => (
-    <Footer>
-      <div className="row primary">
+    contactClicked && <Footer >
+      <div id="footer" className="row primary">
         <div className="column about">
           <h3>Inheritance Wallet</h3>
           <p>Don't let death fool you!</p>
@@ -84,19 +85,25 @@ const Chainlink = () => {
         <p>Copyright &copy; 2023 Inheritance Wallet</p>
       </div>
     </Footer>
+    
   );
 
+
+  const handleContactClick = () => {
+    setContactClicked(true);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
   
   return (
     <div>
       <CustomHead />
       <div className="header">
-        <a className="logo">Inheritance Wallet</a>
+        <a href="/" className="logo">Inheritance Wallet</a>
         <div className="header-right">
           <a href="/" className="home">
             Home
           </a>
-          <a href="/Footer" className="contact">
+          <a className="contact" onClick={handleContactClick}>
             Contact
           </a>
           <a className="active" onClick={walletConnect}>
